@@ -3,7 +3,7 @@ header:
 
 defaults:
   repos:
-    branch: "wrynose"
+    branch: "master"
 
 build_system:
   "oe"
@@ -13,7 +13,6 @@ distro: "oel"
 repos:
   bitbake:
     url: "https://git.openembedded.org/bitbake"
-    branch: "2.18"
     path: "sources/bitbake"
     layers:
       bitbake: "excluded"
@@ -30,7 +29,6 @@ repos:
 
   ye:
     url: "https://github.com/OSSystemsEmbeddedLinux/ye.git"
-    branch: "master"
     path: "sources/ye"
     layers:
       ye: "excluded"

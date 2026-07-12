@@ -2,7 +2,8 @@
 
 [kas](https://kas.readthedocs.io/) build platform for the **oel** distribution
 ([O.S. Systems Embedded Linux](https://github.com/OSSystemsEmbeddedLinux)), built
-on OpenEmbedded-Core and targeting the **wrynose** Yocto Project release.
+on OpenEmbedded-Core and tracking the OpenEmbedded/Yocto Project **master**
+branch.
 
 kas checks out the required layers, generates `bblayers.conf`/`local.conf`, and
 drives BitBake, so a full build is a single command. The repository ships one
@@ -89,11 +90,12 @@ everything else is generated or developer-local.
 ### `base.yml`
 
 The shared foundation: layer repositories, the default branch
-(`wrynose`), `build_system: oe`, and `distro: oel`. It is included by every
+(`master`), `build_system: oe`, and `distro: oel`. It is included by every
 machine file and is not built directly.
 
-Repositories: `bitbake` (branch `2.18`), `openembedded-core` (layer `meta`),
-`meta-ossystems-base` (provides the `oel` distro), and `ye`.
+Repositories: `bitbake`, `openembedded-core` (layer `meta`),
+`meta-ossystems-base` (provides the `oel` distro), and `ye` — all tracked on
+`master`.
 
 ### `oel-<machine>.yml`
 
@@ -156,9 +158,9 @@ hash-equivalence DB follows your sstate cache automatically.
 
 ## Reproducibility
 
-The repos track branches (`wrynose`, `master`, bitbake `2.18`) with no pinned
-commits — convenient for development, but not reproducible. For a release, pin
-exact commits with a lockfile:
+The repos track their `master` branches with no pinned commits — convenient for
+development, but not reproducible. For a release, pin exact commits with a
+lockfile:
 
 ```sh
 kas dump --lock --inplace kas/oel-qemux86-64.yml
