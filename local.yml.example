@@ -1,0 +1,6 @@
+header:
+  version: 1
+
+local_conf_header:
+  local: |
+    OE_FRAGMENTS += "core/yocto/root-login-with-empty-password"

@@ -1,0 +1,36 @@
+header:
+  version: 1
+
+defaults:
+  repos:
+    branch: "wrynose"
+
+build_system:
+  "oe"
+
+distro: "oel"
+
+repos:
+  bitbake:
+    url: "https://git.openembedded.org/bitbake"
+    branch: "2.18"
+    path: "sources/bitbake"
+    layers:
+      bitbake: "excluded"
+
+  openembedded-core:
+    url: "https://git.openembedded.org/openembedded-core"
+    path: "sources/openembedded-core"
+    layers:
+      meta:
+
+  meta-ossystems-base:
+    url: "https://github.com/OSSystemsEmbeddedLinux/meta-ossystems-base.git"
+    path: "sources/meta-ossystems-base"
+
+  ye:
+    url: "https://github.com/OSSystemsEmbeddedLinux/ye.git"
+    branch: "master"
+    path: "sources/ye"
+    layers:
+      ye: "excluded"
